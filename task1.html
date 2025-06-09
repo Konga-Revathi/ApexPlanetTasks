@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts about Nature</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+         .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap; /* makes it responsive */
+    }
+
+    .image {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .image h3 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .image p {
+      font-size: 14px;
+      color: #666;
+    }
+     button {
+      display: block;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: green;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color:green;
+    }
+
+    #secret-ending {
+      display: none;
+      font-style: italic;
+      color: yellow;
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1 align="center"> Curious Facts About Nature</h1>
+    <div class="gallery">
+        <div class="image">
+        <img src="task/larget.jpg"  width="200" height="300" alt="Trees and the Wood Wide Web">
+            <h3>Trees Can Communicate with Each Other</h3>
+            <p>Trees “talk” to one another through an intricate network of fungi in the soil dubbed the “Wood Wide Web.” It connects trees at their roots, allowing them to communicate by sending signals about upcoming threats like droughts or disease — and that’s just the tip of the iceberg. This allows trees to alter their behavior upon receiving the signal.</p>
+        </div>
+        <div class="image">
+        <img src="task/dolphin_pod.webp">
+            <h3>Dolphins Have Names for Each Other</h3>
+            <p>It’s a well-known fact that dolphins are highly social creatures. They typically travel in what we call pods, which can include anywhere from 2 to 30 dolphins. It’s also another well-known fact that dolphins are extremely intelligent. If you’ve ever had the pleasure of meeting a dolphin, you know this first-hand. 
+
+Turns out, dolphins actually have names for one another. Scientists have found that these marine mammals use a distinctive whistle to identify each other. When a dolphin hears their own “name” called to them, they respond.</p>
+        </div>
+        <div class="image">
+            <img src="task/bamboo_growing.webp">
+            <h3>Bamboo Is the World's Fastest Growing Plant</h3>
+            <p>Bamboo is a fast-growing grass with a hollow stem. It’s used to create a number of sustainable products, but it’s best known for being a food source for giant pandas. 
+
+Bamboo also happens to be the world’s fastest growing plant. One species of bamboo can even grow 35 inches in a single day, and some species reach full maturity in just 90 days! Not only does bamboo grow exceptionally fast, it also happens to hold a Guinness World Record for fastest growing plant!</p>
+        </div>
+        <div class="image">
+            <img src="task/milkyway.jpg">
+            <h3>There Are More Trees on Earth Than Stars in the Milky Way</h3>
+            <p>There are so many trees covering our planet that scientists had to figure out a new method to quantify them, and they’ve actually calculated that there are more trees on Earth than stars in the Milky Way. 
+
+Scientists have determined that the number of stars in the Milky Way ranges from 100 billion to upwards of 400 billion, but there is an estimated amount of 3 trillion trees on Earth. That’s a lot of trees! Even with all those trees currently on Earth, it is still very important that we continue protecting our forests and planting more trees!</p>
+        </div>
+    <button onclick="revealEnding()"> Secret Fact</button>
+
+    <div id="secret-ending">
+      <p>There Are More Trees on Earth Than Stars in the Milky Way.</p>
+    </div>
+  </div>
+
+  <script>
+    function revealEnding() {
+      document.getElementById("secret-ending").style.display = "block";
+    }
+  </script>
+</body>
+</html>
+
