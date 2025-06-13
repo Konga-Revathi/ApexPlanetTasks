@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Image Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #eef2f3;
+    }
+    h1 {
+      text-align: center;
+    }
+    .controls {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .add-btn { background-color: blue; }
+    .remove-btn { background-color: green;}
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-item {
+      width: 100%;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Dynamic Image Gallery</h1>
+
+  <div class="controls">
+    <input type="text" id="imageURL" placeholder="Enter a valid image URL" />
+    <button class="add-btn" onclick="addImage()">Add Image</button>
+    <button class="remove-btn" onclick="removeLastImage()">Remove Last</button>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/200" alt="Sample">
+    </div>
+  </div>
+
+  <script>
+    function addImage() {
+      const url = document.getElementById("imageURL").value.trim();
+      if (!url) {
+        alert("Please enter an image URL.");
+        return;
+      }
+
+      const img = new Image();
+      img.onload = function () {
+        const galleryItem = document.createElement("div");
+        galleryItem.className = "gallery-item";
+
+        const newImg = document.createElement("img");
+        newImg.src = url;
+        newImg.alt = "User image";
+
+        galleryItem.appendChild(newImg);
+        document.getElementById("gallery").appendChild(galleryItem);
+        document.getElementById("imageURL").value = "";
+      };
+      img.onerror = function () {
+        alert("Image failed to load. Please check the URL.");
+      };
+      img.src = url;
+    }
+
+    function removeLastImage() {
+      const gallery = document.getElementById("gallery");
+      if (gallery.lastElementChild) {
+        gallery.removeChild(gallery.lastElementChild);
+      } else {
+        alert("No images to remove!");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
